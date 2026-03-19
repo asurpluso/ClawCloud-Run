@@ -48,6 +48,7 @@ jobs:
           else
             TIMESTAMP=$(date +'%Y-%m-%d %H:%M:%S')
             git commit -m "⏱️ 更新 ClawCloud 时间文件: $TIMESTAMP"
+            git pull --rebase origin main  # 添加这一行，拉取远程更新
             git fetch origin main
             git push -f origin HEAD:main
             echo "✅ 更改已推送"
